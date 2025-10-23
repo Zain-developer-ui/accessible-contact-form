@@ -71,6 +71,14 @@ textarea {
   margin-bottom: 8px;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    transition: none;
+  }
+}
+
 input[type="text"]:hover,
 input[type="email"]:hover,
 textarea:hover {
@@ -111,6 +119,12 @@ fieldset {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .radio-option {
+    transition: none;
+  }
 }
 
 .radio-option:hover {
@@ -212,6 +226,12 @@ fieldset {
   margin-top: 16px;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .submit-btn {
+    transition: none;
+  }
+}
+
 .submit-btn:hover {
   background-color: hsl(169, 82%, 20%);
 }
@@ -248,8 +268,8 @@ fieldset.error .radio-option {
 }
 
 .success-toast {
-  position: fixed;
-  top: 2rem;
+  position: absolute;
+  top: -5rem;
   left: 50%;
   transform: translateX(-50%);
   background: hsl(187, 24%, 22%);
@@ -263,6 +283,12 @@ fieldset.error .radio-option {
   z-index: 1000;
   max-width: 450px;
   width: 90%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .success-toast {
+    transition: none;
+  }
 }
 
 .success-toast.show {
@@ -309,7 +335,7 @@ fieldset.error .radio-option {
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
   .container {
     max-width: 375px;
   }
@@ -335,12 +361,12 @@ fieldset.error .radio-option {
   }
   
   .success-toast {
-    top: 1rem;
+    top: -3rem;
     width: calc(100% - 2rem);
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30em) {
   body {
     padding: 1rem;
   }
